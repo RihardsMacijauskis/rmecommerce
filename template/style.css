@@ -1,0 +1,210 @@
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 5;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: none;
+    background-color: grey;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 5;
+}
+
+
+.brandName{
+    align-self: center;
+    color: white;
+    z-index: 15;
+}
+
+.headerlinks{
+    align-self: center;
+    margin: 10px;
+    color: white;
+    z-index: 15;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    height: 60px;
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main;
+}
+
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.products li{
+    list-style-type: none;
+    flex: 0 1 340px;
+    padding: 0;
+    margin-top: 50px;
+    height: 400px;
+}
+
+.product-name{
+    font-size: 20px;
+}
+
+.product-name a{
+    color: black;
+}
+
+.price{
+    font-size: 16px;
+}
+
+.product-image{
+    max-width: 250px;
+    max-height: 350px;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    margin-top: 60px;
+    left: 0;
+    width: 250px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: grey;
+}
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}

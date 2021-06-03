@@ -42,6 +42,7 @@ export default function PaymentPage(props) {
               id="stripe"
               value="Stripe"
               name="paymentMethod"
+              disabled
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
